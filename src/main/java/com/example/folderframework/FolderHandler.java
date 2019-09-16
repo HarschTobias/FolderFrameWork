@@ -27,7 +27,7 @@ public class FolderHandler {
             Path absolute_file_name = real_out_path.resolve(entry.getKey() + ".txt");
             try (BufferedWriter buffered_writer = Files.newBufferedWriter(absolute_file_name)) {
                 write_folder_information_to(buffered_writer, entry);
-                int a = 1;
+                int a = 2;
             } catch (IOException e) {
                 System.err.println("IOError: Cannot write to " + absolute_file_name.toString() + ".");
             }
