@@ -1,0 +1,9 @@
+Plugin FolderSize:
+C:\Root                                                               :     0 kB
+C:\Root \Env                                                          :     0 kB
+C:\Root \Env       \TestStubs                                         : 1.406 kB
+C:\Root \Project1                                                     :     0 kB
+C:\Root \Project1  \src                                               :     0 kB
+C:\Root \Project1  \src \com                                          :     0 kB
+C:\Root \UnitTests                                                    :     0 kB
+C:\Root \UnitTests \TestDesign                                        :     0 kB
