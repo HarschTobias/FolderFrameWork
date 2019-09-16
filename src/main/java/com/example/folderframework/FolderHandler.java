@@ -26,8 +26,8 @@ public class FolderHandler {
         for (Map.Entry<String, IFolderClient> entry : folder_clients.entrySet()) {
             Path absolute_file_name = real_out_path.resolve(entry.getKey() + ".txt");
             try (BufferedWriter buffered_writer = Files.newBufferedWriter(absolute_file_name)) {
-                write_folder_information_to(buffered_writer, entry); //as
-                String a = "";
+                write_folder_information_to(buffered_writer, entry);
+                int a = 1;
             } catch (IOException e) {
                 System.err.println("IOError: Cannot write to " + absolute_file_name.toString() + ".");
             }
