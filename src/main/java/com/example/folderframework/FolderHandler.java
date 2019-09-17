@@ -8,10 +8,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class FolderHandler {
-    private final Map<String, IFolderClient> folder_clients = FolderClientFactory.create_all();
+    private final Map<String, IFolderClient> folder_clients = FolderClientFactory.get_all();
     private final Path root_path;
     private final FormattedPathStringBuilder formatted_path_string_builder = new FormattedPathStringBuilder();
-    private final RecursiveFolderWalker recursive_folder_walker = new RecursiveFolderWalker();
 
     public FolderHandler(Path root_path) {
         this.root_path = root_path;
@@ -27,7 +26,6 @@ public class FolderHandler {
             Path absolute_file_name = real_out_path.resolve(entry.getKey() + ".txt");
             try (BufferedWriter buffered_writer = Files.newBufferedWriter(absolute_file_name)) {
                 write_folder_information_to(buffered_writer, entry);
-                int a = 2;
             } catch (IOException e) {
                 System.err.println("IOError: Cannot write to " + absolute_file_name.toString() + ".");
             }
@@ -41,7 +39,7 @@ public class FolderHandler {
     }
 
     private void write_folder_information_to(BufferedWriter writer, Map.Entry<String, IFolderClient> entry) throws IOException {
-        recursive_folder_walker.setFolder_client(entry.getValue());
+        RecursiveFolderWalker recursive_folder_walker = new RecursiveFolderWalker(entry.getValue());
         Map<Path, String> result_data = recursive_folder_walker.get_formatted_path_folder_client_result_map(root_path);
         Map<String, String> result_text_data = result_data.entrySet().stream().collect(Collectors.toMap(e -> formatted_path_string_builder.build_formatted_path_from_target_path(root_path, e.getKey()), Map.Entry::getValue));
         OutputFileWriter output_file_writer = new OutputFileWriter(entry.getKey(), result_text_data);

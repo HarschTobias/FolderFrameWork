@@ -39,10 +39,10 @@ public class FolderHandlerTest {
     @Test
     public void write_to_file_test() throws IOException {
         Path target_path = Paths.get("C:\\Root");
-        Path out_path = Paths.get("C:\\Users\\Tobias Harsch\\IdeaProjects\\FolderFrameWork");
+        Path out_path = Paths.get(".");
         new FolderHandler(target_path).write_all_folder_information_to_separate_files(out_path);
 
-        byte[] bytes = Files.readAllBytes(Paths.get("C:\\Users\\Tobias Harsch\\IdeaProjects\\FolderFrameWork\\Plugin FolderSize.txt"));
+        byte[] bytes = Files.readAllBytes(Paths.get("Plugin FolderSize.txt"));
         Assert.assertArrayEquals(expected_data.getBytes(StandardCharsets.UTF_8), bytes);
     }
 

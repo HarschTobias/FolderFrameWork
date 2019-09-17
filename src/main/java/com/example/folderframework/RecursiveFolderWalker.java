@@ -7,15 +7,12 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class RecursiveFolderWalker {
-    private IFolderClient folder_client = null;
+    private final IFolderClient folder_client;
     private final Map<Path, String> folder_client_result_map = new TreeMap<>();
     private Path current_path;
 
     public RecursiveFolderWalker(IFolderClient folder_client) {
-        this.setFolder_client(folder_client);
-    }
-
-    public RecursiveFolderWalker() {
+        this.folder_client = folder_client;
     }
 
     public Map<Path, String> get_formatted_path_folder_client_result_map(Path target_path) {
@@ -47,9 +44,5 @@ public class RecursiveFolderWalker {
                 recursive_folder_handler(file.toPath());
             }
         }
-    }
-
-    public void setFolder_client(IFolderClient folder_client) {
-        this.folder_client = folder_client;
     }
 }

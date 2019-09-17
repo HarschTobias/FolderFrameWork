@@ -20,9 +20,8 @@ public class FolderSizeClient implements IFolderClient {
     }
 
     private long determine_size_of_files_in_bytes(Path path) {
-        File[] file_info_list = path.toFile().listFiles();
-        if (file_info_list != null) {
             try {
+                File[] file_info_list = path.toFile().listFiles();
                 return Arrays.stream(file_info_list)
                         .filter(File::isFile)
                         .map(File::length)
@@ -31,7 +30,5 @@ public class FolderSizeClient implements IFolderClient {
             } catch (Exception e) {
                 return 0;
             }
-        }
-        return 0;
     }
 }
