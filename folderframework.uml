@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example.folderframework</OriginalElement>
+  <nodes>
+    <node x="799.0" y="244.5">com.example.folderframework.FolderClientFactory</node>
+    <node x="0.0" y="255.0">com.example.folderframework.OutputFileWriter</node>
+    <node x="815.5" y="420.0">com.example.folderframework.FolderHandler</node>
+    <node x="812.7335758377426" y="110.0">com.example.folderframework.FolderSizeClient</node>
+    <node x="359.0" y="233.0">com.example.folderframework.RecursiveFolderWalker</node>
+    <node x="954.8472222222223" y="0.0">com.example.folderframework.IFolderClient</node>
+    <node x="1220.0" y="255.0">com.example.folderframework.FormattedPathStringBuilder</node>
+  </nodes>
+  <notes>
+    <note x="92.5" y="133.0">
+      <node>com.example.folderframework.OutputFileWriter</node>
+      <value>writes output files</value>
+      <edge>
+        <point x="0.0" y="-36.5" />
+        <point x="0.0" y="13.5" />
+      </edge>
+    </note>
+    <note x="1225.0" y="133.0">
+      <node>com.example.folderframework.FormattedPathStringBuilder</node>
+      <value>formats path string of a folder for the output</value>
+      <edge>
+        <point x="0.0" y="-36.5" />
+        <point x="0.0" y="13.5" />
+      </edge>
+    </note>
+    <note x="326.31889329805995" y="124.5">
+      <node>com.example.folderframework.RecursiveFolderWalker</node>
+      <value>walks though folder tree \nand returns results of one client</value>
+      <edge>
+        <point x="-140.0" y="-58.5" />
+        <point x="429.0" y="208.0" />
+        <point x="452.31889329805995" y="208.0" />
+        <point x="0.0" y="22.0" />
+      </edge>
+    </note>
+  </notes>
+  <edges>
+    <edge source="com.example.folderframework.FolderHandler" target="com.example.folderframework.OutputFileWriter">
+      <point x="-118.66666666666663" y="-47.5" />
+      <point x="874.8333333333334" y="390.0" />
+      <point x="254.25" y="390.0" />
+      <point x="84.75" y="36.5" />
+    </edge>
+    <edge source="com.example.folderframework.FolderHandler" target="com.example.folderframework.FormattedPathStringBuilder">
+      <point x="158.22222222222217" y="-47.5" />
+      <point x="1151.7222222222222" y="400.0" />
+      <point x="1484.75" y="400.0" />
+      <point x="88.25" y="36.5" />
+    </edge>
+    <edge source="com.example.folderframework.FolderHandler" target="com.example.folderframework.FolderClientFactory">
+      <point x="0.0" y="-47.5" />
+      <point x="0.0" y="47.0" />
+    </edge>
+    <edge source="com.example.folderframework.FolderHandler" target="com.example.folderframework.IFolderClient">
+      <point x="79.11111111111109" y="-47.5" />
+      <point x="1072.611111111111" y="380.0" />
+      <point x="1209.5" y="380.0" />
+      <point x="1209.5" y="80.0" />
+      <point x="1082.061507936508" y="80.0" />
+      <point x="58.714285714285666" y="25.0" />
+    </edge>
+    <edge source="com.example.folderframework.FolderClientFactory" target="com.example.folderframework.FolderSizeClient">
+      <point x="-129.66666666666663" y="-47.0" />
+      <point x="863.8333333333334" y="208.0" />
+      <point x="891.7335758377426" y="208.0" />
+      <point x="0.0" y="36.5" />
+    </edge>
+    <edge source="com.example.folderframework.FolderHandler" target="com.example.folderframework.RecursiveFolderWalker">
+      <point x="-79.11111111111109" y="-47.5" />
+      <point x="914.3888888888889" y="380.0" />
+      <point x="464.0" y="380.0" />
+      <point x="-105.0" y="58.5" />
+    </edge>
+    <edge source="com.example.folderframework.FolderClientFactory" target="com.example.folderframework.IFolderClient">
+      <point x="129.66666666666674" y="-47.0" />
+      <point x="1123.1666666666667" y="208.0" />
+      <point x="1046.6136463844796" y="208.0" />
+      <point x="1046.6136463844796" y="90.0" />
+      <point x="1042.9186507936508" y="90.0" />
+      <point x="19.571428571428555" y="25.0" />
+    </edge>
+    <edge source="com.example.folderframework.RecursiveFolderWalker" target="com.example.folderframework.IFolderClient">
+      <point x="140.0" y="-58.5" />
+      <point x="709.0" y="208.0" />
+      <point x="633.3472222222222" y="208.0" />
+      <point x="633.3472222222222" y="80.0" />
+      <point x="984.2043650793652" y="80.0" />
+      <point x="-39.14285714285711" y="25.0" />
+    </edge>
+    <edge source="com.example.folderframework.FolderSizeClient" target="com.example.folderframework.IFolderClient">
+      <point x="0.0" y="-36.5" />
+      <point x="891.7335758377426" y="90.0" />
+      <point x="1003.7757936507937" y="90.0" />
+      <point x="-19.571428571428555" y="25.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="511.0" y="330.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
